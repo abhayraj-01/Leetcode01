@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+void push(int arr[],int *size,int *top){
+    if(*size==0){
+        
+    }
+    scanf("%d",&arr[++(*top)]);
+    //insert at top
+    // *top++;
+    (*size)++;
+}
+          
+void pop(int arr[],int *size,int *top){
+    arr[(*top)] = 0;
+    (*top)--;
+    (*size)--;
+}      
+          
+void display(int arr[],int *size){
+    for(int i=0;i<*size;i++){
+        printf("%d",arr[i]);
+    }
+}
+
+int main() {
+    // function bana kar jiska jasa dala hain wasa call kardo
+    int arr[100];
+    int size = 0;
+    int top = -1;
+    
+    push(arr,&size,&top);
+    push(arr,&size,&top);
+    push(arr,&size,&top);
+    // push(arr,&size,&top);
+    
+    pop(arr,&size,&top);
+    
+    push(arr,&size,&top);
+    push(arr,&size,&top);
+    
+    pop(arr,&size,&top);
+    pop(arr,&size,&top);
+    pop(arr,&size,&top);
+    
+    display(arr,&size);
+    
+    
+    return 0;
+}
